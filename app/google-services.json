@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "507326769758",
+    "project_id": "landmarkpay-5de9e",
+    "storage_bucket": "landmarkpay-5de9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:507326769758:android:90671739280cec30eb22cf",
+        "android_client_info": {
+          "package_name": "com.example.landmarkpay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "507326769758-ohf3cncgeojdtim6urkq2gd0msie753d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDti5qhs1hWN_c-EsiI9fnAO3qFL_N-7as"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "507326769758-ohf3cncgeojdtim6urkq2gd0msie753d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

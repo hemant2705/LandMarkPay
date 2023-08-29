@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_send_money"
+        android:title="Send Money"
+        android:icon="@drawable/ic_send_money" />
+    <item
+        android:id="@+id/menu_listings"
+        android:title="Listings"
+        android:icon="@drawable/ic_listings"
+        android:checked="true" />
+    <item
+        android:id="@+id/menu_discussions"
+        android:title="Discussions"
+        android:icon="@drawable/ic_discussions" />
+    <item
+        android:id="@+id/menu_agreements"
+        android:title="Agreements"
+        android:icon="@drawable/ic_agreements" />
+    <item
+        android:id="@+id/menu_transaction_history"
+        android:title="Transaction History"
+        android:icon="@drawable/ic_transaction_history" />
+</menu>
