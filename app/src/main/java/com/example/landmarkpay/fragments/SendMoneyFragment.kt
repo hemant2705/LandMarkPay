@@ -1,60 +1,66 @@
 package com.example.landmarkpay.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.fragment.app.Fragment
 import com.example.landmarkpay.R
+import com.example.landmarkpay.database.DatabaseHelper
+import com.example.landmarkpay.database.DatabaseHelper1
+import com.example.landmarkpay.database.Recipient
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [SendMoneyFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SendMoneyFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var databaseHelper: DatabaseHelper1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_send_money, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SendMoneyFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SendMoneyFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        databaseHelper = DatabaseHelper1(requireContext())
+
+        val sendButton = view.findViewById<Button>(R.id.sendButton)
+        val recipientAccountNumberEditText = view.findViewById<EditText>(R.id.recipientAccountNumberEditText)
+        val recipientNameEditText = view.findViewById<EditText>(R.id.recipientNameEditText)
+        val countryEditText = view.findViewById<EditText>(R.id.countryEditText)
+        val bicEditText = view.findViewById<EditText>(R.id.bicEditText)
+
+        sendButton.setOnClickListener {
+            val recipientAccountNumber = recipientAccountNumberEditText.text.toString()
+            val recipientName = recipientNameEditText.text.toString()
+            val country = countryEditText.text.toString()
+            val bic = bicEditText.text.toString()
+
+          //  val userId = databaseHelper.getColumnValue("TABLE_ENTERPRISES", "id")
+
+
+            val recipient = Recipient(
+                id = 0, // Auto-generated ID in SQLite
+               // userId = userId,
+                recipientAccountNumber = recipientAccountNumber,
+                recipientName = recipientName,
+                country = country,
+                bic = bic
+            )
+
+            databaseHelper.insertRecipient(recipient)
+
+            // Show success message or perform other actions
+        }
     }
+
+
+
+
 }
+
+

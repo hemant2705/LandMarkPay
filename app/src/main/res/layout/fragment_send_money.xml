@@ -5,10 +5,78 @@
     android:layout_height="match_parent"
     tools:context=".fragments.SendMoneyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Add this layout to your res/layout directory -->
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".SendMoneyFragment">
+
+        <EditText
+            android:id="@+id/recipientAccountNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+
+            android:hint="Recipient Account Number"
+            android:inputType="number"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/recipientNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Recipient Name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:inputType="text"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/countryEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="Country"
+            android:inputType="text"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/bicEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="BIC"
+            android:inputType="text"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/amountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:hint="Amount"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/sendButton"
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:text="Send Money"/>
+
+    </LinearLayout>
+
 
 </FrameLayout>

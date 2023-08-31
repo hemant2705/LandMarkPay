@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_discussions -> Discussion()
                 R.id.menu_agreements -> Agreements()
                 R.id.menu_transaction_history -> Transaction_History()
-                else -> ListingsFragment()
+                else -> SendMoneyFragment()
             }
 
             supportFragmentManager.beginTransaction()
